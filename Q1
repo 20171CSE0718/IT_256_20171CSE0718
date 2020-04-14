@@ -1,0 +1,17 @@
+<!--write a simple javscript to read and print your name using prompt dialog box-->
+<html>
+    <head>
+        <title>IT Assignment-Dialig box</title>
+    </head>
+    <body onload="dialog()">
+        <script>
+            function dialog(){
+                let name = prompt("Enter your name");
+                if(name!=""&&name!=null)
+                    document.write("Entered name is: "+name);
+                else
+                    dialog();
+            }
+        </script>
+    </body>
+</html>
