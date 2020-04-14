@@ -1,0 +1,23 @@
+<!--write a javascript code to confirm your name using prompt and confirm boxes-->
+<html>
+    <head>
+        <title>IT Assignment-conformation</title>
+    </head>
+    <body onload="confirmbox()"> 
+        <script>
+            function confirmbox(){
+                var name = prompt("Enter your name");
+                if(name!=null&&name!=""){
+                    if(window.confirm(name+" is your name right?")){
+                        document.write("Hello "+name+"!");
+                    }
+                    else{
+                        confirmbox();
+                    }}
+                else{
+                    confirmbox();
+                }
+            }
+        </script>
+    </body>
+</html>
