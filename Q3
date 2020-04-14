@@ -1,0 +1,16 @@
+<!--write a javascrpt code to read and print 10 number from user using prompt-->
+<html>
+    <head>
+        <title>IT Assignment</title>
+    </head>
+    <body onload="promptnum()">
+        <script>
+            function promptnum(){
+            var arr=[],num;
+            for(let i=0;i<10;i++)
+                arr[i]=prompt("Enter "+(i+1)+" number");
+                document.write("Entered array of numbers is : "+arr);
+            }
+        </script>
+    </body>
+</html>
