@@ -1,0 +1,67 @@
+<!--Design HTML document using JavaScript that contains three short paragraphs of text,stacked on top of each other,with only enough of each showing so that the mouse cursor can be placed over some part of them.When the cursor is placed over the exposed part of any paragraph,it should rise to the top to become completely visible.(Hint Use zIndex and position property , Event attribute can be onmouseover or onclick, user defined function can be used )-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type=text/javascript>
+        var topLayer="layer3";
+        var origpos;
+
+        function mouseOver(toTop,pos)
+        {
+            document.getElementById(toTop).style.zIndex="4";
+            topLayer=toTop;
+            origpos=pos;
+        }
+
+        function moveBack()
+        {
+            document.getElementById(topLayer).style.zIndex=origpos;
+        }
+    </script>
+    <style type="text/css">
+        #layer1
+        {
+            border:solid thick black;
+            background-color:lightblue;
+            padding:20px;
+            width:250px;
+            height:250px;
+            position:absolute;
+            top:100px;
+            left:480px;
+            z-index:1;
+        }
+        #layer2
+        {
+            border:solid thick black;
+            background-color:lightgreen;
+            padding:20px;
+            width:250px;
+            height:250px;
+            position:absolute;
+            top:140px;
+            left:500px;
+            z-index:2;
+        }
+        #layer3
+        {
+            border:solid thick black;
+            background-color:lightgrey;
+            padding:20px;
+            width:250px;
+            height:250px;
+            position:absolute;
+            top:180px;
+            left:520px;
+            z-index:3;
+        }
+    </style>
+</head>
+<body>
+    <h3 align="center" >Text Stacking</h3>
+    <p id=layer1 onMouseOver=mouseOver('layer1','1'); onMouseOut=moveBack()>By the 1990s there were already over 25,000 stage adaptations, films, television productions and publications featuring the detective,[2] and Guinness World Records lists him as the most portrayed literary human character in film and television history. </p>
+    <p id=layer2 onMouseOver=mouseOver('layer2','2'); onMouseOut=moveBack()>Referring to himself as a "consulting detective" in the stories, Holmes is known for his proficiency with observation, deduction, forensic science, and logical reasoning that borders on the fantastic, which he employs when investigating cases for a wide variety of clients, including Scotland Yard.</p>
+    <p id=layer3 onMouseOver=mouseOver('layer3','3'); onMouseOut=moveBack()>Sherlock Holmes (/ˈʃɜːrlɒk ˈhoʊmz/ or /-ˈhoʊlmz/) is a fictional private detective created by British author Sir Arthur Conan Doyle.Though not the first fictional detective, Sherlock Holmes is arguably the best known.</p>
+</body>
+</html>
